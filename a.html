@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        /* border-collapse: collapse; */
+        border: 1px solid red;
+      }
+      th {
+        text-align: left;
+      }
+    </style>
+    <script>
+      function myFunction() {
+        document.getElementById("fire").innerHTML = "how are you my friend";
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label for="namevillage">village name:</label><br />
+      <input type="text" id="namevillage" name="namevillage" /><br />
+      <label for="namecity">city name</label><br />
+      <input type="text" id="namecity" name="namecity" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <hr />
+
+    <p id="fire">is this good thing to do</p>
+    <button onclick="myFunction()">click</button>
+
+    <hr />
+    <table>
+      <tr>
+        <th>name</th>
+        <th>country</th>
+        <th>local address</th>
+      </tr>
+      <tr>
+        <td>hanna</td>
+        <td>anna</td>
+        <td>mana</td>
+      </tr>
+      <tr>
+        <td>hakjhnna</td>
+        <td>ankjhna</td>
+        <td>makjhna</td>
+      </tr>
+    </table>
+  </body>
+</html>
