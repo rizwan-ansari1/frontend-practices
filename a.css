@@ -1,24 +1,38 @@
-.card {
-  width: 500px;
-  margin: 20px auto;
-  background-color: antiquewhite;
+.navbar {
+  background-color: #1d9e75;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 24px;
   align-items: center;
-  border-radius: 5px;
+}
+.navbar .logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
 }
 
-table {
-  width: 80%;
-  border: 1px solid black;
-  margin-bottom: 20px;
+.navbar button {
+  background-color: white;
+  color: #1d9e75;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-td:last-child {
-  text-align: right;
-}
-
-tr td {
-  border: 1px solid black;
-  background-color: whitesmoke;
+.navbar button:hover {
+  background-color: #f0f0f0;
 }
