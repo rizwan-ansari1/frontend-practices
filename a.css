@@ -1,9 +1,14 @@
 .navbar {
   background-color: #1d9e75;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 12px 24px;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 .navbar .logo {
   color: white;
@@ -35,4 +40,150 @@
 
 .navbar button:hover {
   background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 20px 20px;
+}
+.hero {
+  background: #085041;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.hero h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.search-bar {
+  display: flex;
+  justify-content: space-around;
+  gap: 6px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-bar button {
+  background: white;
+  color: #085041;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 20px;
+}
+
+.rooms h2 {
+  margin-bottom: 16px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.featured {
+  border: 2px solid #1d9e75;
+}
+.card-image {
+  background: #9fe1cb;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.badge {
+  position: absolute;
+  top: -1px;
+  right: 8px;
+  background: #e24b4a;
+  color: white;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 0 0 8px 8px;
+}
+.card-body {
+  padding: 12px;
+}
+.card-body h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.card-body p {
+  font-size: 12px;
+  color: #666;
+}
+.price {
+  color: #0f6e56 !important;
+  font-size: 16px !important;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.price span {
+  font-size: 11px;
+  color: #999;
+  font-weight: normal;
+}
+.select-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #1d9e75;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.unavailable {
+  background: #eee;
+  color: red;
+  cursor: not-allowed;
+}
+.amenities {
+  margin-bottom: 24px;
+}
+.amenities h2 {
+  margin-bottom: 16px;
+}
+.amenity-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.amenity-list li {
+  background: #e1f5ee;
+  padding: 10px 14px;
+  color: #085041;
 }

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="a.css" />
   </head>
   <body>
-    <!-- section 1: Navbar -->
     <nav class="navbar">
       <span class="logo">🏨 SeaBreeze Hotel</span>
       <ul>
@@ -19,10 +18,64 @@
       <button>Book Now</button>
     </nav>
 
-    <!-- section 2: Main Content Wrapper -->
-
     <div class="container">
-      <p>Content Goes here</p>
+      <section class="hero">
+        <p class="hero-subtitle">Welcome to the paradise</p>
+        <h1>Find Your Perfect Rooms</h1>
+        <div class="search-bar">
+          <input type="date" placeholder="check-in" />
+          <input type="date" placeholder="check-out" />
+          <button>Search</button>
+        </div>
+      </section>
+
+      <section class="rooms">
+        <h2>Our Homes</h2>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-image">🛏️</div>
+            <div class="card-body">
+              <h3>Standard</h3>
+              <p>Queen Bed</p>
+              <p class="price">$80<span>/night</span></p>
+              <button class="select-btn">Select Room</button>
+            </div>
+          </div>
+
+          <div class="card featured">
+            <div class="badge">⭐ Best Value</div>
+            <div class="card-image">🌊</div>
+            <div class="card-body">
+              <h3>Deluxe Sea View</h3>
+              <p>King Bed + View</p>
+              <p class="price">$120 <span>/night</span></p>
+              <button class="select-btn">Select Room</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">👑</div>
+            <div class="card-body">
+              <h3>Suite</h3>
+              <p>2 Rooms + Jacuzzi</p>
+              <p class="price">$200 <span>/night</span></p>
+              <button class="select-btn unavailable">Unavailable</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="amenities">
+        <h2>Hotel Ameneties</h2>
+        <ul class="amenity-list">
+          <li>🛜 Free WiFi</li>
+          <li>🏊 Swimming Pool</li>
+          <li>🏋️ Gym Acess</li>
+          <li>🍽️ Restaurant</li>
+          <li>💆 Spa and Wellness</li>
+          <li>🅿️ Free Parking</li>
+        </ul>
+      </section>
     </div>
   </body>
 </html>
