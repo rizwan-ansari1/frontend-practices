@@ -49,7 +49,9 @@
               <h3>Deluxe Sea View</h3>
               <p>King Bed + View</p>
               <p class="price">$120 <span>/night</span></p>
-              <button class="select-btn">Select Room</button>
+              <button class="select-btn" onclick="openModal()">
+                Select Room
+              </button>
             </div>
           </div>
 
@@ -76,6 +78,63 @@
           <li>🅿️ Free Parking</li>
         </ul>
       </section>
+      <section class="pricing">
+        <h2>Room Pricing</h2>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Room Type</th>
+              <th>Price/Night</th>
+              <th>Beds</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Standard</td>
+              <td>$80</td>
+              <td>1 Queen</td>
+              <td><span class="status available">Available</span></td>
+            </tr>
+            <tr>
+              <td>Deluxe</td>
+              <td>$120</td>
+              <td>1 King</td>
+              <td><span class="status available">Available</span></td>
+            </tr>
+            <tr>
+              <td>Suite</td>
+              <td>$200</td>
+              <td>2 King</td>
+              <td><span class="status booked">Booked</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="modal-overplay" id="modal">
+        <div class="modal-box">
+          <h2>Confirm Booking</h2>
+          <p>Room: Deluxe Sea View</p>
+          <p>Price: $120/night</p>
+          <div class="total">Total: $360</div>
+          <div class="modal-buttons">
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button class="confirm-btn">Confirm</button>
+          </div>
+        </div>
+      </section>
     </div>
+    <script>
+      function openModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "flex";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "none";
+      }
+    </script>
   </body>
 </html>
