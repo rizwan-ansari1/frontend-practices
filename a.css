@@ -1,62 +1,12 @@
-.card{
-  width: 320px;
-  border: 1px solid red;
-  border-radius: 12px;
-  padding: 16px;
-  position: relative;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
 }
 
-.bio{
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-.profile-pic{
-  float: left;
-  margin-right: 12px;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-}
-
-.activity {
-  height: 30px;
-  border: 1px solid green;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  overflow-y: auto;
-}
-.tag{
-display: inline-block;
-background:#e6f0ff;
-color: #1a4fa0;
-padding: 5px 10px;
-border-radius: 999px;
-font-size: 12px;
-margin: 0 12px 6px 0;
-}
-.badge{
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #d9f7e3;
-  color: #1a7a3c;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  z-index: 2;
-
-  
-}
-
-.ribbon{
-  position: absolute;
-    top: 28px;
-  right: 60px;
-  background: #fde2e2;
-  color: #a02020;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  z-index: 3;
-
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  line-height: 1.5;
 }
