@@ -10,3 +10,176 @@ body{
   color: #222;
   line-height: 1.5;
 }
+.navbar{
+  position: relative;
+  background: #1f2937;
+  padding: 1rem 2rem;
+  z-index:2rem;
+}
+.logo{
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+
+.nav-links{
+  display: inline-block;
+  list-style: none;
+  /* border: 1px solid white; */
+}
+.nav-links > li{
+  display: inline-block;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.nav-links>li>a{
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.nav-links>li>a:hover{
+ opacity: 0.7;
+}
+
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #374151;
+  min-width: 180px;
+  list-style: none;
+  z-index: 20;
+  
+}
+
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+
+.dropdown-menu li a{
+  display: block;
+  padding: 0.5rem 1rem ;
+  color: #fff;
+  text-decoration: none;
+}
+.dropdown-menu li a:hover{
+  opacity: 0.7;
+}
+
+.profile{
+  padding: 2rem;
+}
+.avatar-wrap{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.badge{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  z-index: 5;
+}
+
+.profile-info{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1.5rem;
+  max-width: calc(100%-160px);
+}
+
+.skills{
+  padding: 2rem;
+  background: #f3f4f6;
+}
+.skills-list{
+  list-style: none;
+  counter-reset: skill-counter;
+}
+.skills-list li {
+counter-increment: skill-counter;
+padding: 0.4rem 0;
+}
+.skills-list li::before{
+  content: counter(skill-counter) ".";
+  font-weight: bold;
+  color: #1f2937;
+}
+.bio-box{
+  padding: 2rem;
+
+}
+.bio-scroll{
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+}
+.contact{
+  padding: 2rem;
+}
+form{
+  max-width: 400px;
+}
+form label{
+  display: block;
+  margin-top: 1rem;
+}
+input[type="text"],
+input[type="email"],textarea{
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+}
+
+input:foucs, 
+textarea:foucs{
+  outline: 2px solid #2563eb;
+  border-color: #2563eb;
+}
+input:invalid{
+  border-color: #dc2626;
+}
+
+button{
+  margin-top: 1rem;
+  padding:0.6rem 1.2rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover{
+  opacity: 0.85;
+}
+
+.site-footer{
+  background: #111827;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.footer-col{
+  float: left;
+  width: calc(100% / 3);
+  color: #fff;
+  padding: 0 1rem;
+}
