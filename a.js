@@ -1,78 +1,47 @@
-const generateBtn = document.getElementById("generateBtn");
-const errorMsg = document.getElementById("errorMsg");
-const reportOutput = document.getElementById("reportOutput");
+let seconds = 0;
+let timeInterval = null;
+let sessions = [];
+let taskSet = new Set();
+let taskMap = new Map();
 
-generateBtn.addEventListener("click", function () {
-  console.log("Button was Clicked!");
+const quotes = [
+  "Small steps every day add up.",
+  "Focus is a skill. You're training it right now.",
+  "Progress, not perfection.",
+  "Future you will thank present you.",
+  "One session at a time.",
+];
 
-  errorMsg.textContent = "";
-  reportOutput.innerHtml = "";
+const taskInput = document.getElementById("taskInput");
+const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
+const timerDisplay = document.getElementById("timerDisplay");
 
-  let name = document.getElementById("studentName").value.trim();
-  let mark1 = document.getElementById("mark1").value.trim();
-  let mark2 = document.getElementById("mark2").value.trim();
-  let mark3 = document.getElementById("mark3").value.trim();
+function formatTime(totalSeconds) {
+  const mins = Math.floor(totalSeconds / 60);
+  const secs = totalSeconds % 60;
+  const paddedMins = String(mins).padStart(2, "0");
+  const paddedSecs = String(secs).padStart(2, "0");
+  return `${paddedMins}:${paddedSecs}`;
+}
+// timerDisplay.textContent = formatTime(0);
 
-  if (name === "" || mark1 === "" || mark2 === "" || mark3 === "") {
-    errorMsg.textContent = "Please Fill in all Feilds";
+function startTimer() {
+  const taskName = taskInput.value.trim();
+  if (taskName === "") {
+    alert("Type what are you studying first!");
     return;
   }
+  seconds = 0;
+  timerDisplay.textContent = formatTime(seconds);
 
-  mark1 = Number(mark1);
-  mark2 = Number(mark2);
-  mark3 = Number(mark3);
+  timeInterval = setInterval(function () {
+    seconds = seconds + 1;
+    timerDisplay.textContent = formatTime(seconds);
+  }, 1000);
 
-  if (isNaN(mark1) || isNaN(mark2) || isNaN(mark3)) {
-    errorMsg.textContent = "Marks must be numbers.";
-    return;
-  }
-
-  let subjects = ["Math", "Science", "English"];
-  let marks = [mark1, mark2, mark3];
-  let total = 0;
-  for (let i = 0; i < subjects.length; i++) {
-    total = total + marks[i];
-  }
-  console.log("total is:", total);
-
-  let average = total / subjects.length;
-  average = average.toFixed(2);
-
-  let grade = "";
-  if (average >= 90) {
-    grade = "A+";
-  } else if (average >= 75) {
-    grade = "A";
-  } else if (average >= 60) {
-    grade = "B";
-  } else if (average >= 40) {
-    grade = "B";
-  } else {
-    grade = "Fail";
-  }
-
-  console.log("the average and grade are :", average, grade);
-
-  let listHTML = "";
-  for (let i = 0; i < subjects.length; i++) {
-    listHTML = listHTML + "<li>" + subjects[i] + ": " + marks[i] + "</li>";
-
-    let displayName = name.toUpperCase();
-    reportOutput.innerHTML =
-      "<h2>" +
-      displayName +
-      "'s Report </h2>" +
-      "<ul>" +
-      listHTML +
-      "</ul>" +
-      "<p>Total:" +
-      total +
-      "</p>" +
-      "<p> Average:" +
-      average +
-      "</p>" +
-      "<p>Grade:" +
-      grade +
-      "</p>";
-  }
-});
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
+  taskInput.disabled = true;
+}
+startBtn.addEventListener("click", startTimer);
