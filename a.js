@@ -38,10 +38,77 @@ function startTimer() {
   timeInterval = setInterval(function () {
     seconds = seconds + 1;
     timerDisplay.textContent = formatTime(seconds);
-  }, 1000);
+  }, 1);
 
   startBtn.disabled = true;
   stopBtn.disabled = false;
   taskInput.disabled = true;
 }
 startBtn.addEventListener("click", startTimer);
+
+function stopTimer() {
+  clearInterval(timeInterval);
+
+  const taskName = taskInput.value.trim();
+
+  const session = {
+    id: sessions.length + 1,
+    task: taskName,
+    duration: seconds,
+    date: new Date(),
+  };
+
+  sessions.push(session);
+  taskSet.add(taskName);
+
+  const currentCount = taskMap.get(taskName) || 0;
+  taskMap.set(taskName, currentCount + 1);
+
+  renderSession();
+  updateStates();
+  showRandomQuote();
+
+  seconds = 0;
+  timerDisplay.textContent = formatTime(seconds);
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
+  taskInput.disabled = false;
+}
+stopBtn.addEventListener("click", stopTimer);
+
+const sessionListEl = document.getElementById("sessionList");
+
+function renderSession() {
+  sessionListEl.innerHTML = "";
+  sessions.forEach(function (session) {
+    const li = document.createElement("li");
+    const timeString = session.date.toLocaleTimeString();
+    li.textContent = `#${session.id}-${session.task}-${formatTime(session.duration)}-${timeString}`;
+    sessionListEl.appendChild(li);
+  });
+}
+
+const totalSessionsEl = document.getElementById("totalSessions");
+const uniqueTaskEl = document.getElementById("uniqueTasks");
+const avgDurationEl = document.getElementById("avgDuration");
+
+function updateStates() {
+  totalSessionsEl.textContent = sessions.length;
+  uniqueTaskEl.textContent = taskSet.size;
+
+  let totalDuration = 0;
+  for (const session of sessions) {
+    totalDuration = totalDuration + session.duration;
+  }
+  const average =
+    sessions.length > 0 ? Math.round(totalDuration / sessions.length) : 0;
+  avgDurationEl.textContent = average + "s";
+
+  console.log("avg duration:", average);
+}
+
+const quoteEl = document.getElementById("quote");
+function showRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  quoteEl.textContent = quotes[randomIndex];
+}
