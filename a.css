@@ -1,104 +1,64 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  font-family: "Segou UI", Arial, sans-serif;
-  background: #f4f0ff;
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 30px;
-  width: 100%;
-  max-width: 480px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-h {
-  text-align: center;
-  font-size: 1.4rem;
-}
-
-.controls {
+.search-row {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
 }
-
-#taskInput {
+#usernameInput {
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 6px;
 }
-button {
+
+#searchBtn {
   padding: 10px 16px;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  background: #7c5cff;
+  background: #2563eb;
   color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+.error {
+  color: #d33;
+  margin-top: 10px;
+  font-size: 14px;
+  min-height: 18px;
 }
 
-.timer-display {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 10px 0;
-  color: #7c5cff;
-}
-.quote {
-  text-align: center;
-  font-style: italic;
-  min-height: 1.2rem;
-  color: #666;
-  margin-bottom: 20px;
-}
-.stats {
+.card {
+  margin-top: 15px;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  gap: 15px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
 }
-.stat-box {
-  text-align: center;
-}
-.stat-number {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #7c5cff;
+.hidden {
+  display: none;
 }
 
-.stat-label {
-  font-size: 0.8rem;
-  color: #888;
+.card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
-h2 {
-  font-size: 1rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 8px;
+/* .info h2 {
+  margin: 0;
+  font-size: 16px;
 }
-#sessionList {
-  list-style: none;
-  padding: 0;
-  max-height: 200px;
-  overflow-y: auto;
+
+.info p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #555;
 }
-#sessionList li {
-  padding: 8px;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 0.9rem;
-}
+
+.info a {
+  font-size: 13px;
+  color: #2563eb;
+} */

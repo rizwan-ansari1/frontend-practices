@@ -3,40 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Study Session Tracker</title>
+    <title>GitHub Profile Finder</title>
     <link rel="stylesheet" href="a.css" />
     <script src="a.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <h1>📚 Study Session Tracker</h1>
+    <div class="app">
+      <h1>🔍 GitHub Profile Finder</h1>
 
-      <div class="controls">
-        <input type="text" id="taskInput" placeholder="what are you studying" />
-        <button id="startBtn">Start</button>
-        <button id="stopBtn" disabled>Stop</button>
+      <div class="search-row">
+        <input
+          type="text"
+          id="usernameInput"
+          placeholder="type a github username..."
+        />
+        <button id="searchBtn">Search</button>
       </div>
+      <p id="errorMsg" class="error"></p>
 
-      <div class="timer-display" id="timerDisplay">00:00</div>
-      <p class="quote" id="quote"></p>
-      <div class="stats">
-        <div class="stat-box">
-          <span class="stat-number" id="totalSessions">0</span>
-          <span class="stat-label">Sessions</span>
-        </div>
-
-        <div class="stat-box">
-          <span class="stat-number" id="uniqueTasks">0</span>
-          <span class="stat-label">Unique Tasks</span>
-        </div>
-
-        <div class="stat-box">
-          <span class="stat-number" id="avgDuration">0s</span>
-          <span class="stat-label">Avg Duration</span>
+      <div id="profileCard" class="card hidden">
+        <img id="avatar" src="" alt="avatar" />
+        <div class="info">
+          <h2 id="name"></h2>
+          <p id="username"></p>
+          <p id="bio"></p>
+          <p id="followers"></p>
+          <a href="#" id="profileLink" target="_blank"
+            >View Profile on GitHub</a
+          >
         </div>
       </div>
-      <h2>Session Log</h2>
-      <ul id="sessionList"></ul>
     </div>
   </body>
 </html>
