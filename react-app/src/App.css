@@ -1,53 +1,121 @@
-.stopwatch {
-  max-width: 400px;
-  margin: 40px auto;
-  text-align: center;
-  font-family: sans-serif;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 24px;
+* {
+  box-sizing: border-box;
 }
-h1 {
-  font-size: 1.3rem;
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
 }
-.time {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 16px 0;
-}
-.buttons {
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 24px 16px;
   display: flex;
-  gap: 8px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
 }
-button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 16px;
-  background: #4f46e5;
-  color: white;
-  cursor: pointer;
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.panel h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.panel .subtitle {
+  margin: 4px 0 0;
+  color: #6b7280;
   font-size: 0.9rem;
 }
+.panel-body {
+  margin-top: 12px;
+}
+.panel-body p {
+  margin: 4px 0;
+}
 
-button:disabled {
-  background: #c7c7c7;
-  cursor: not-allowed;
+.message {
+  color: #6b7280;
 }
-button:hover:not(:disabled) {
-  background: #4338ca;
+.message.error {
+  color: #b91c1c;
 }
-.lap-list {
+
+.search {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.search input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.search button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+.user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
   text-align: left;
-  list-style: decimal;
-  padding-left: 24px;
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  font: inherit;
 }
-.lap-list li {
-  padding: 4px 0;
-  border-bottom: 1px solid #eee;
+.card:hover {
+  border-color: #93c5fd;
+}
+.card.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
 }
 
-.no-laps {
-  color: #888;
-  font-style: italic;
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+.site {
+  color: #2563eb;
+  font-size: 0.8rem;
 }
